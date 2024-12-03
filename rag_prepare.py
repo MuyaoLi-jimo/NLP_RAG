@@ -3,7 +3,7 @@ construct a rag system
 @author muyao
 """
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 
 class RAG_SYSTEM:
@@ -12,5 +12,13 @@ class RAG_SYSTEM:
         self.huggingface_embeddings = HuggingFaceEmbeddings(
             model_name="/Users/jimoli/Desktop/my_hw/NLP RAG/models",
             encode_kwargs ={'normalize_embeddings':True},
+            model_kwargs={'device': 'cpu',
+                          'trust_remote_code':True}
+        
         )
-    pass
+    def create_db():
+        pass
+
+if __name__ =="__main__":
+    rag= RAG_SYSTEM()
+    
